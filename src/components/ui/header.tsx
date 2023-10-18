@@ -58,8 +58,15 @@ const Header = () => {
                   </Avatar>
 
                   <div className="flex flex-col">
-                    <p className="font-thin">{data.user.name}</p>
-                    <p className="text-sm opacity-75">Boas compras!</p>
+                    <p className="font-thin">
+                      {data.user.name}
+                      {data.user.role === "admin" ? "(admin)" : ""}
+                    </p>
+                    <p className="text-sm opacity-75">
+                      {data.user.role === "admin"
+                        ? "Boas vendas!"
+                        : "Boas compras!"}
+                    </p>
                   </div>
                 </div>
                 <Separator />
